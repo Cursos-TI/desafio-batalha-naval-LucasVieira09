@@ -4,49 +4,63 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
 // Siga os comentários para implementar cada parte do desafio.
 
-int main() {
+    // Nível Novato - Posicionamento dos Navios
+    // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
+    // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
+    // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
+#define LINHAS 10
+#define COLUNAS 10
+#define TAM 10
+
+int main () {
 // VARIÁVEIS
-    int tabuleiro [10][10];
+    int tabuleiro [TAM][TAM];
     int i, j;
-    char linha[10] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+    char linha[LINHAS] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
 
 // INICIAR O TABULEIRO
-    for (i = 0; i < 10; i++) {
-        for (j = 0; j < 10; j++) {
+    for (i = 0; i < LINHAS; i++) {
+        for (j = 0; j < COLUNAS; j++) {
             tabuleiro[i][j] = 0;
         }
     }
 
-// NAVIO HORIZONTAL
+// NAVIO HORIZONTAL (LINHA C, COLUNAS 4 a 6).
     tabuleiro[2][4] = 3;
     tabuleiro[2][5] = 3;
     tabuleiro[2][6] = 3;
 
-// NAVIO VERTICAL
+// NAVIO VERTICAL (COLUNA 7, LINHAS F a H).
     tabuleiro[5][7] = 3;
     tabuleiro[6][7] = 3;
     tabuleiro[7][7] = 3;
 
+// NAVIO DIAGONAL 1 (A0 a C2).
+    tabuleiro[0][0] = 3;
+    tabuleiro[1][1] = 3;
+    tabuleiro[2][2] = 3;
+
+// NAVIO DIAGONAL 2 (H9 a J7).
+    tabuleiro[7][9] = 3;
+    tabuleiro[8][8] = 3;
+    tabuleiro[9][7] = 3;
+
 // CABEÇALHO
     printf("\n   ");
-    for (j = 0; j < 10; j++) {
+    for (j = 0; j < COLUNAS; j++) {
         printf("%d " , j);
     }
     printf("\n");
 
 // IMPRIME O TABULEIRO 
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < LINHAS; i++) {
         printf("%c | " , linha[i]);
-        for (j = 0; j < 10; j++) {
+        for (j = 0; j < COLUNAS; j++) {
             printf("%d " , tabuleiro[i][j]);
         }
         printf("\n");
     }
     
-    // Nível Novato - Posicionamento dos Navios
-    // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
-    // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
-    // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
 
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
     // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
